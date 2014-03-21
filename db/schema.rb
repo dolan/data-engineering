@@ -11,7 +11,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321203045) do
+ActiveRecord::Schema.define(version: 20140321211547) do
+
+  create_table "addresses", force: true do |t|
+    t.string   "street"
+    t.string   "city"
+    t.string   "region"
+    t.string   "postal_code"
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "addresses", ["addressable_id"], name: "index_addresses_on_addressable_id"
+  add_index "addresses", ["addressable_type"], name: "index_addresses_on_addressable_type"
+  add_index "addresses", ["city"], name: "index_addresses_on_city"
+  add_index "addresses", ["postal_code"], name: "index_addresses_on_postal_code"
+  add_index "addresses", ["region"], name: "index_addresses_on_region"
+
+  create_table "customers", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "customers", ["name"], name: "index_customers_on_name"
+
+  create_table "data_file_uploads", force: true do |t|
+    t.string   "note",         default: "Uploaded file"
+    t.string   "data_file"
+    t.decimal  "total_income", default: 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "description"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["description"], name: "index_items_on_description"
+
+  create_table "merchants", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "merchants", ["name"], name: "index_merchants_on_name"
+
+  create_table "purchases", force: true do |t|
+    t.integer  "item_id"
+    t.decimal  "quantity"
+    t.integer  "customer_id"
+    t.integer  "merchant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purchases", ["customer_id"], name: "index_purchases_on_customer_id"
+  add_index "purchases", ["item_id"], name: "index_purchases_on_item_id"
+  add_index "purchases", ["merchant_id"], name: "index_purchases_on_merchant_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
