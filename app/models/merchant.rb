@@ -13,4 +13,7 @@
 #
 
 class Merchant < ActiveRecord::Base
+  has_one :address, as: :addressable, dependent: :destroy
+  validates :name, presence: true
+  validates :address, presence: true
 end

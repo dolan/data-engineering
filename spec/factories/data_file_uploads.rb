@@ -15,7 +15,7 @@
 FactoryGirl.define do
   factory :data_file_upload do
     note "An uploaded file"
-    data_file { fixture_file_upload("test_file.tab") }
+    data_file { Rack::Test::UploadedFile.new(Rails.root.join("spec/fixtures/files/test_file.tab"), "text/tab-separated-values") }
     total_income "9.99"
   end
 end

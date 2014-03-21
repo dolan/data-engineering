@@ -11,4 +11,6 @@
 #
 
 class DataFileUpload < ActiveRecord::Base
+  validates :note, presence: true
+  validates :data_file, presence: true
 end

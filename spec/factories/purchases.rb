@@ -22,7 +22,7 @@
 FactoryGirl.define do
   factory :purchase do
     item
-    quantity "9.99"
+    quantity "1"
     customer
     merchant
   end

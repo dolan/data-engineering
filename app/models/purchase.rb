@@ -21,4 +21,12 @@ class Purchase < ActiveRecord::Base
   belongs_to :item
   belongs_to :customer
   belongs_to :merchant
+  validates :item, presence: true
+  validates :quantity, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+  validates :customer, presence: true
+  validates :merchant, presence: true
+
+  def purchase_amount
+    quantity * item.price
+  end
 end
