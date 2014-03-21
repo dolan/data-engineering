@@ -50,7 +50,7 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
     if Rails.env.test?
-      FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
+      FileUtils.rm_rf(Dir[TabDataFileUploader.new.cache_dir])
     end
   end
 end
