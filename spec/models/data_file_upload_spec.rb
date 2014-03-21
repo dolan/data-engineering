@@ -22,10 +22,6 @@ describe DataFileUpload do
     it "should be valid with a file and note" do
       expect(@data_file_upload).to be_valid
     end
-    it "should not be valid without a file" do
-      @data_file_upload.data_file = nil
-      expect(@data_file_upload).to have(1).errors_on(:data_file)
-    end
     it "should not be valid without a note" do
       @data_file_upload.note = nil
       expect(@data_file_upload).to have(1).errors_on(:note)

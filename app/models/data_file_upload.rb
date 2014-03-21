@@ -12,5 +12,5 @@
 
 class DataFileUpload < ActiveRecord::Base
   validates :note, presence: true
-  validates :data_file, presence: true
+  mount_uploader :data_file, TabDataFileUploader
 end
