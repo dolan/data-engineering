@@ -8,6 +8,7 @@
 #  total_income :decimal(, )      default(0.0)
 #  created_at   :datetime
 #  updated_at   :datetime
+#  processed_at :datetime
 #
 
 require 'spec_helper'
