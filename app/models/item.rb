@@ -16,4 +16,9 @@
 class Item < ActiveRecord::Base
   validates :description, presence: true
   validates :price, presence: true, numericality: {greater_than_or_equal_to: 0}
+
+  # HACK: to allow simple form to pick this up
+  def name
+    "#{description} ($#{price.round(2)})"
+  end
 end

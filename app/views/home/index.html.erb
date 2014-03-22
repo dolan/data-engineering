@@ -1,1 +1,13 @@
 <h3>Home</h3>
+  <div class="row-fluid">
+    <div class="col-md-2 content-gutter-short">&nbsp;</div>
+    <div class="con-md-8">
+      <h3><%= link_to raw(fa_icon("file", text:'Uploads')), data_file_uploads_path %></h3>
+      <h3><%= link_to raw(fa_icon("users", text: 'Customers')), customers_path %></h3>
+      <h3><%= link_to raw(fa_icon("money", text:'Merchants')), merchants_path %></h3>
+      <h3><%= link_to raw(fa_icon("book", text: 'Catalog')), items_path %></h3>
+      <h3><%= link_to raw(fa_icon("shopping-cart", text: 'Purchases')), purchases_path %></h3>
+    </div>
+    <div class="col-md-2 content-gutter-short">&nbsp;</div>
+  </div>
+</ul>

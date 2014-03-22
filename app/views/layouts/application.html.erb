@@ -10,11 +10,35 @@
   </head>
   <body>
     <header>
-      <%= render 'layouts/navigation' %>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-1 nav-gutter">
+            &nbsp;
+          </div>
+          <div class="col-md-10">
+            <%= render 'layouts/navigation' %>
+          </div>
+          <div class="col-md-1 nav-gutter">
+            &nbsp;
+          </div>
+        </div>
+      </div>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+       <div class="container-fluid">
+         <div class="row">
+           <div class="col-md-1 content-gutter">
+             &nbsp;
+           </div>
+           <div class="col-md-10 main-content">
+             <%= render 'layouts/messages' %>
+             <%= yield %>
+           </div>
+           <div class="col-md-1 content-gutter">
+             &nbsp;
+           </div>
+         </div>
+       </div>
     </main>
   </body>
 </html>

@@ -1,0 +1,9 @@
+<fieldset>
+  <legend>Address</legend>
+  <%= f.simple_fields_for :address do |a| %>
+    <%= a.input :street %>
+    <%= a.input :city %>
+    <%= a.input :region, label: "State" %>
+    <%= a.input :postal_code, label: "Zip" %>
+  <% end %>
+</fieldset>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped table-bordered">
+  <tbody>
+    <tr>
+      <th>Note</th>
+      <td><%= @data_file_upload.note %></td>
+    </tr>
+    <tr>
+      <th>File</th>
+      <td><%= link_to @data_file_upload.data_file.identifier, @data_file_upload.data_file.url %></td>
+    </tr>
+    <tr>
+      <th>Processed At</th>
+      <td><%= friendly_date_and_time(@data_file_upload.processed_at) %></td>
+    </tr>
+    <tr>
+      <th>Total Value of Purchases</th>
+      <td>$<%= number_with_precision(@data_file_upload.total_income, precision: 2) %>
+    </tr>
+  </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_data_file_upload_path(@data_file_upload) %> |
+<%= link_to 'Back', data_file_uploads_path %>

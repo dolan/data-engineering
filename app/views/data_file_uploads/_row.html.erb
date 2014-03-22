@@ -1,0 +1,9 @@
+<tr>
+  <td><%= link_to data_file_upload.data_file.identifier, data_file_upload.data_file.url %></td>
+  <td><%= data_file_upload.note %></td>
+  <td><%= friendly_date_and_time(data_file_upload.processed_at) %></td>
+  <td>$<%= number_with_precision(data_file_upload.total_income, precision: 2) %>
+  <td><%= link_to 'Show', data_file_upload %></td>
+  <td><%= link_to 'Edit', edit_data_file_upload_path(data_file_upload) %></td>
+  <td><%= link_to 'Destroy', data_file_upload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

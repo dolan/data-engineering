@@ -1,4 +1,5 @@
 class MerchantsController < ApplicationController
+  before_filter :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_merchant, only: [:show, :edit, :update, :destroy]
 
   # GET /merchants
@@ -69,6 +70,6 @@ class MerchantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def merchant_params
-      params[:merchant]
+      params.require(:merchant).permit(:name, :address_attributes => [:street, :city, :region, :postal_code])
     end
 end

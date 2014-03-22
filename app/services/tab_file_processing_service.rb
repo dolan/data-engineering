@@ -39,10 +39,6 @@ class TabFileProcessingService
             purchase.save
             purchases << purchase
           rescue Exception => e
-
-            puts e.to_s
-            sleep 5
-
             raise ActiveRecord::Rollback
           end
         end # transaction

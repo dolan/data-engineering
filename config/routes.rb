@@ -1,4 +1,6 @@
 DataEngineering::Application.routes.draw do
+  resources :data_file_uploads
+
   resources :purchases
 
   resources :merchants
