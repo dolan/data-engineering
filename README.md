@@ -8,11 +8,8 @@ provided by the [RailsApps Project](http://railsapps.github.io/).
 Database
 --------
 
-This application uses SQLite with ActiveRecord in both prod/dev
+This application uses SQLite with ActiveRecord
 
-Production
------------
-   puma webserver
 
 Development
 -----------
@@ -23,21 +20,32 @@ Development
 Getting Started
 ---------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+- Requires: Ruby 2.0, Rails 4.0
+- Clone the git repository to a local directory
+- cd to the project directory
+- on the command line, run: bundle install
+- on the command line, run: rake db:migrate
+- from the command line, run: rails s
 
-Documentation and Support
--------------------------
+The 'rails s' command will start the server on localhost on port 3000
 
-This is the only documentation.
+To Run Rspec:
 
-#### Issues
+- at a command prompt in the project root directory, run: rspec
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Notes from the author
+---------------------
 
-Similar Projects
-----------------
+- I would think if this were ever in production the processing of the CSV file
+  should be done asynchronously out of process using some task framework, like sidekiq or resque to avoid DoS
+- I do require you to login for the 'destructive' operations, such as uploading a
+  data file, or editing any of the items in the database, however, I didn't have
+  enough time to make roles work yet which would have limited access based on
+  assignment.  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  For the sake of the demo:
+  - logged in = admin
+  - not logged in = guest
 
 Contributing
 ------------
@@ -49,14 +57,11 @@ If you make improvements to this application, please share with others.
 -   Commit with Git.
 -   Send the author a pull request.
 
-If you add functionality to this application, create an alternative
-implementation, or build an application that is similar, please contact
-me and I’ll add a note to the README so that others can find your work.
 
 Credits
 -------
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Dave Dolan and the respective authors of the gems and scripts used in the app.
+em: dave.dolan _at_ gmail
 
 License
 -------

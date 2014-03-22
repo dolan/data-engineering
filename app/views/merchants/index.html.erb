@@ -1,8 +1,9 @@
 <h1>Listing merchants</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
+      <th>Name</th>
       <th></th>
       <th></th>
       <th></th>
@@ -11,11 +12,7 @@
 
   <tbody>
     <% @merchants.each do |merchant| %>
-      <tr>
-        <td><%= link_to 'Show', merchant %></td>
-        <td><%= link_to 'Edit', edit_merchant_path(merchant) %></td>
-        <td><%= link_to 'Destroy', merchant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render "row", merchant: merchant %>
     <% end %>
   </tbody>
 </table>
