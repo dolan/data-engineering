@@ -24,6 +24,7 @@ Getting Started
 - Clone the git repository to a local directory
 - cd to the project directory
 - on the command line, run: bundle install
+- on the command line, run: rake db:create:all
 - on the command line, run: rake db:migrate
 - from the command line, run: rails s
 
